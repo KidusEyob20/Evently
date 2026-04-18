@@ -68,7 +68,7 @@ const PartnersMarquee = () => {
       <div className="marquee-container">
         <div 
           className="marquee-content"
-          style={{ animationDirection: 'reverse', animationDuration: '35s' }}
+          style={{ animationDirection: 'reverse', animationDuration: '40s' }}
         >
           {[...doubledPartners].reverse().map((partner, index) => (
             <div
