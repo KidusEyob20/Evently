@@ -84,7 +84,7 @@ const Navbar = () => {
             <Link to="/login">
               <Button 
                 variant={shouldBeTransparent ? 'outline' : 'ghost'} 
-                className={`gap-2 ${shouldBeTransparent ? 'border-white/50 text-white hover:bg-white/10 hover:text-white' : ''}`}
+                className={`gap-2 ${shouldBeTransparent ? 'border-white/50 text-white bg-white/5 hover:bg-white/20 hover:border-white/70' : ''}`}
               >
                 <User className="w-4 h-4" />
                 Sign In

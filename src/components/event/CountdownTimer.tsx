@@ -52,7 +52,8 @@ const CountdownTimer = ({ targetDate, eventTitle }: CountdownTimerProps) => {
         className="glass rounded-2xl p-6 text-center"
       >
         <Clock className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
-        <p className="text-white font-semibold">Event has started!</p>
+        <p className="text-white font-semibold text-lg mb-1">🎉 Event Live Now!</p>
+        <p className="text-white/70 text-sm">Join the InnovAIte Hackathon - happening right now</p>
       </motion.div>
     );
   }

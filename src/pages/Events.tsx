@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Grid3X3, List } from 'lucide-react';
+import { Search, Grid3X3, List, Trophy, Users, Calendar, Zap, Target, Award, Rocket } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import {
   Select,
@@ -43,19 +43,180 @@ const Events = () => {
   return (
     <div className="min-h-screen bg-navy-50 pt-24 pb-16">
       {/* Hero Section */}
-      <div className="bg-navy-900 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-navy-900 py-20 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <motion.div
+            animate={{
+              x: [0, 100, 0],
+              y: [0, -50, 0],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="absolute top-10 left-10 w-20 h-20 bg-emerald-500/10 rounded-full blur-xl"
+          />
+          <motion.div
+            animate={{
+              x: [0, -80, 0],
+              y: [0, 60, 0],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="absolute bottom-20 right-20 w-32 h-32 bg-coral-500/10 rounded-full blur-xl"
+          />
+          <motion.div
+            animate={{
+              rotate: [0, 360],
+            }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="absolute top-1/2 left-1/4 w-16 h-16 border border-emerald-400/20 rounded-full"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Discover Events
-            </h1>
-            <p className="text-navy-300 text-lg max-w-2xl mx-auto">
+            {/* Animated Icons */}
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              className="flex justify-center gap-6 mb-8"
+            >
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, delay: 0 }}
+                className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center"
+              >
+                <Trophy className="w-6 h-6 text-emerald-400" />
+              </motion.div>
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
+                className="w-12 h-12 bg-coral-500/20 rounded-xl flex items-center justify-center"
+              >
+                <Users className="w-6 h-6 text-coral-400" />
+              </motion.div>
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
+                className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center"
+              >
+                <Calendar className="w-6 h-6 text-indigo-400" />
+              </motion.div>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-4xl md:text-6xl font-bold text-white mb-6"
+            >
+              Discover
+              <motion.span
+                animate={{ color: ['#10b981', '#f97316', '#8b5cf6', '#10b981'] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="block text-emerald-400"
+              >
+                Amazing Events
+              </motion.span>
+            </motion.h1>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex flex-wrap justify-center gap-4 mb-8"
+            >
+              {[
+                { icon: Trophy, text: 'Hackathons', color: 'text-emerald-400' },
+                { icon: Users, text: 'Conferences', color: 'text-coral-400' },
+                { icon: Target, text: 'Competitions', color: 'text-indigo-400' },
+                { icon: Rocket, text: 'Workshops', color: 'text-purple-400' }
+              ].map((item, index) => (
+                <motion.div
+                  key={item.text}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                  className="flex items-center gap-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10"
+                >
+                  <item.icon className={`w-4 h-4 ${item.color}`} />
+                  <span className="text-white/90 text-sm font-medium">{item.text}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-navy-300 text-lg max-w-2xl mx-auto mb-8"
+            >
               Find hackathons, competitions, conferences, and workshops across Dubai&apos;s universities
-            </p>
+            </motion.p>
+
+            {/* Animated Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-wrap justify-center gap-8 text-center"
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
+              >
+                <motion.div
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="text-2xl font-bold text-emerald-400 mb-1"
+                >
+                  50+
+                </motion.div>
+                <div className="text-white/70 text-sm">Events This Month</div>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
+              >
+                <motion.div
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                  className="text-2xl font-bold text-coral-400 mb-1"
+                >
+                  20+
+                </motion.div>
+                <div className="text-white/70 text-sm">Universities</div>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
+              >
+                <motion.div
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                  className="text-2xl font-bold text-indigo-400 mb-1"
+                >
+                  1000+
+                </motion.div>
+                <div className="text-white/70 text-sm">Students</div>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
