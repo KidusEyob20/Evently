@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Grid3X3, List, Trophy, Users, Calendar, Zap, Target, Award, Rocket } from 'lucide-react';
+import { Search, Grid3X3, List, Trophy, Users, Calendar, Target, Rocket } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import {
   Select,
