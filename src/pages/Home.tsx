@@ -414,8 +414,7 @@ const Home = () => {
               <Link to="/post-event">
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 gap-2"
+                  className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white gap-2"
                 >
                   Post an Event
                 </Button>
