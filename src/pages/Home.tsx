@@ -23,6 +23,7 @@ const Home = () => {
 
   const sections = [
     { id: 'hero', name: 'Home' },
+    { id: 'partners', name: 'Partners' },
     { id: 'featured', name: 'Featured' },
     { id: 'events', name: 'Events' },
     { id: 'categories', name: 'Categories' },
@@ -166,7 +167,7 @@ const Home = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 gap-2"
+                  className="border-white/50 text-white bg-white/5 hover:bg-white/20 hover:border-white/70 gap-2"
                 >
                   Join as Student
                 </Button>
@@ -185,7 +186,9 @@ const Home = () => {
       </section>
 
       {/* Partners Marquee */}
-      <PartnersMarquee />
+      <section id="partners">
+        <PartnersMarquee />
+      </section>
 
       {/* Section 2: Featured Events */}
       <section id="featured" className="fullscreen-section">
